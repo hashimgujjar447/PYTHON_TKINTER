@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1d43afaa50a20e4f85f3d7a1bcbb48847630e4c5
 Student Name: Muhamamd hashim
 Total Marks: 0.0
 Percentage: 0.00%
