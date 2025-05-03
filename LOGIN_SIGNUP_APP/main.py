@@ -33,6 +33,8 @@ def login():
     print(users)  # Debugging line to check loaded users
     if users.get(u) == p:
         showinfo("Success", f"Welcome, {u}!")
+        login_win.withdraw()
+        open_profile()
     else:
         showerror("Error", "Invalid username or password")
 
@@ -81,6 +83,38 @@ def open_signup():
 
     Button(signup_win, text="Register", width=15, command=register).pack(pady=10)
     Button(signup_win, text="Back to Login", command=lambda: [signup_win.destroy(), login_win.deiconify()]).pack()
+
+
+def open_profile():
+    profile_win=Toplevel();
+    profile_win.title("User profile");
+    profile_win.geometry("350x300");
+    profile_win.resizable(0,0)
+    pu=username.get()
+    
+    Label(profile_win, text=f"Profile of {pu}", font=("Arial", 18)).pack(pady=10)
+    
+    # Load user info (you can expand this later with more details)
+    users = load_users()
+    user_password = users.get(pu, "Not Found")
+
+    Label(profile_win, text=f"Username: {pu}", font=("Arial", 12)).pack(pady=5)
+    Label(profile_win, text=f"Password: {user_password}", font=("Arial", 12)).pack(pady=5)
+
+    def logout():
+        profile_win.destroy()
+        login_win.deiconify()
+
+    Button(profile_win, text="Logout", width=15, command=logout).pack(pady=10)
+
+
+
+
+
+
+
+
+
 
 # Login Window
 login_win = Tk()
