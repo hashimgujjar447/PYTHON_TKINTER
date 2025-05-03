@@ -12,6 +12,9 @@ A simple GUI-based **Login and Signup application** built using Python's `tkinte
 - ✅ Username uniqueness check
 - ✅ Data saved to `users.json`
 - ✅ Error and success dialogs using `messagebox`
+- ✅ Profile Page:
+  - Displays logged-in user's profile details.
+  - Shows username and password (can be replaced with more details later).
 
 ---
 
@@ -22,7 +25,7 @@ LOGIN_SIGNUP_APP/
 │
 ├── main.py       # Main application file
 └── users.json    # User credentials stored in JSON format
-                  # (empty on first run)
+                                    # (empty on first run)
 ```
 
 ---
